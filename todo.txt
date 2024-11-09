@@ -1,0 +1,9 @@
+check textToSpeech and textToImage functionality that it works or not
+check createPodcast api that it works or not
+add validation in createPodcast form that user can add only one image(aiImage or cutomImage)
+remove not required margin from all component of /podcast route
+fix the coditinal rendering for similar podcast
+use emptystate component in podcast/id route
+learn how to get user from clerk on server side 
+implement axios for api calling 
+view, understand, make changes and reduce the code of podcastDetailPlayer component

@@ -1,7 +1,9 @@
 import PodcastCard from "@/components/reuseable/PodcastCard";
-import { podcastData } from "@/utils/constant";
+import { apiCall } from "@/utils/apiCall";
+import { podcastDataType } from "@/utils/type";
 
-export default function Home() {
+export default async function Home() {
+  const podcastData: podcastDataType[] = await apiCall("getAllPodcast");
   return (
     <div className="flex flex-col gap-9">
       <section className="flex flex-col gap-5">

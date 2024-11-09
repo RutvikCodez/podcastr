@@ -28,6 +28,9 @@ const config: Config = {
         orange: {
           "1": "#F97535",
         },
+        gray: {
+          1: "#71788B",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -73,12 +76,14 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        "accent-1": "6px",
       },
       fontSize: {
         "1": "20px",
         "2": "24px",
         "3": "16px",
         "4": "12px",
+        "5": "18px",
       },
       backgroundColor: {
         "accent-1": "#101114",

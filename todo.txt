@@ -10,3 +10,8 @@ view, understand, make changes and reduce the code of podcastDetailPlayer compon
 implment carousel in right sidebar
 use manrope fonts (define font in root layout)
 implement functionality for search podcast
+implement profile page for user 
+user can't move to profile page and createPodcast page if user is not logged in
+implement two apis for getUserByid and getPodcastsByAuthorId
+update middleware.ts to redirect user to home page if it is not logged in
+learn how to get user from clerk on server

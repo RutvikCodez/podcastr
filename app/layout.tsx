@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import AudioProvider from "@/providers/AudioProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,11 +45,13 @@ export default function RootLayout({
       }}
     >
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-accent-1`}
-        >
-          {children}
-        </body>
+        <AudioProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-accent-1`}
+          >
+            {children}
+          </body>
+        </AudioProvider>
       </html>
     </ClerkProvider>
   );

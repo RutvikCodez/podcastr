@@ -1,5 +1,5 @@
 export type podcastDataType = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   imgURL: string;
@@ -138,4 +138,17 @@ export type TopPodcastersProps = {
 
 export type carouselProps = {
   fansLikeDetails: TopPodcastersProps[];
+};
+
+export type AudioProps = {
+  title: string;
+  audioUrl: string;
+  author: string;
+  imageUrl: string;
+  podcastId: string;
+};
+
+export type AudioContextType = {
+  audio: AudioProps | undefined;
+  setAudio: React.Dispatch<React.SetStateAction<AudioProps | undefined>>;
 };

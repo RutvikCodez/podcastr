@@ -8,6 +8,7 @@ import Play from "@/public/icons/Play.svg";
 import Delete from "@/public/icons/delete.svg";
 import ThreeDots from "@/public/icons/three-dots.svg";
 import { apiCall } from "@/utils/apiCall";
+import { useAudio } from "@/providers/AudioProvider";
 
 const PodcastDetailPlayer = ({
   imgURL,
@@ -17,10 +18,20 @@ const PodcastDetailPlayer = ({
   author,
   isOwner,
   id,
+  voicePrompt,
 }: podcastDataType) => {
   const router = useRouter();
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const handlePlay = () => {};
+  const { setAudio } = useAudio();
+  const handlePlay = () => {
+    setAudio({
+      audioUrl: voicePrompt,
+      author: author || "",
+      imageUrl: imgURL,
+      podcastId: id || "",
+      title: title,
+    });
+  };
   const handleDelete = async () => {
     try {
       const podcast: podcastDataType = await apiCall(`/getPodcastById/${id}`);

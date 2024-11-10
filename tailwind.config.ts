@@ -84,6 +84,7 @@ const config: Config = {
         "3": "16px",
         "4": "12px",
         "5": "18px",
+        "6": "14px",
       },
       backgroundColor: {
         "accent-1": "#101114",

@@ -7,3 +7,4 @@ use emptystate component in podcast/id route
 learn how to get user from clerk on server side 
 implement axios for api calling 
 view, understand, make changes and reduce the code of podcastDetailPlayer component
+implment carousel in right sidebar

@@ -121,3 +121,9 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+
+.glassmorphism-black {
+  background: rgba(18, 18, 18, 0.64);
+  backdrop-filter: blur(37px);
+  -webkit-backdrop-filter: blur(37px);
+}

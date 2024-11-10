@@ -120,4 +120,22 @@ export type emptyStateType = {
 export type headertype = {
   title: string;
   titleClassName?: string;
-}
+};
+
+export type TopPodcastersProps = {
+  id: string;
+  creationTime: number;
+  email: string;
+  imageUrl: string;
+  clerkId: string;
+  name: string;
+  podcast: {
+    podcastTitle: string;
+    podcastId: Id<"podcasts">;
+  }[];
+  totalPodcasts: number;
+};
+
+export type carouselProps = {
+  fansLikeDetails: TopPodcastersProps[];
+};

@@ -131,7 +131,7 @@ export type TopPodcastersProps = {
   name: string;
   podcast: {
     podcastTitle: string;
-    podcastId: Id<"podcasts">;
+    podcastId: string;
   }[];
   totalPodcasts: number;
 };

@@ -1,20 +1,42 @@
 import { SignedIn, UserButton } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import React from "react";
 import RightArrow from "@/public/icons/right-arrow.svg";
 import Header from "./Header";
 import Carousel from "./Carousel";
-import { apiCall } from "@/utils/apiCall";
-import { TopPodcastersProps } from "@/utils/type";
-import { redirect } from "next/navigation";
 import Image from "next/image";
+import { TopPodcastersProps } from "@/utils/type";
 
 const RightSidebar = async () => {
-  const user = await currentUser();
-  const topPocasts: TopPodcastersProps[] = await apiCall(
-    "getTopUserByPodcastCount"
-  );
+  // const user = await currentUser();
+  // const topPocasts: TopPodcastersProps[] = await apiCall(
+  //   "getTopUserByPodcastCount"
+  // );
+  const user = {
+    id: "123",
+    firstName: "Rutvik",
+    lastName: "Darji",
+  };
+
+  const podcast = [
+    {
+      podcastTitle: "My Podcast",
+      podcastId: "1",
+    },
+  ];
+
+  const topPocasts: TopPodcastersProps[] = [
+    {
+      id: "123",
+      creationTime: 1,
+      email: "rutvik@gmail.com",
+      imageUrl: "/icons/right-arrow.svg",
+      clerkId: "1",
+      name: "Rutvik",
+      podcast: podcast,
+      totalPodcasts: 1,
+    },
+  ];
   return (
     <section className="sticky right-0 top-0 flex w-full flex-col overflow-y-hidden border-none bg-black-1 p-8 max-xl:hidden text-white-1">
       <SignedIn>
@@ -38,9 +60,9 @@ const RightSidebar = async () => {
           <div
             key={index}
             className="flex cursor-pointer justify-between"
-            onClick={() =>
-              redirect(`/podcast/${item.podcast.at(0)!.podcastId}`)
-            }
+            // onClick={() =>
+            //   redirect(`/podcast/${item.podcast.at(0)!.podcastId}`)
+            // }
           >
             <figure className="flex items-center gap-2">
               <Image
@@ -53,7 +75,9 @@ const RightSidebar = async () => {
               <h2 className="text-3 font-semibold text-white-1">{item.name}</h2>
             </figure>
             <div className="flex items-center">
-              <p className="text-4 font-normal">{item.totalPodcasts} podcasts</p>
+              <p className="text-4 font-normal">
+                {item.totalPodcasts} podcasts
+              </p>
             </div>
           </div>
         ))}

@@ -1,3 +1,4 @@
+check for getAllPodcast api
 check textToSpeech and textToImage functionality that it works or not
 check createPodcast api that it works or not
 add validation in createPodcast form that user can add only one image(aiImage or cutomImage)
@@ -8,10 +9,10 @@ learn how to get user from clerk on server side
 implement axios for api calling 
 view, understand, make changes and reduce the code of podcastDetailPlayer component
 implment carousel in right sidebar
-use manrope fonts (define font in root layout)
 implement functionality for search podcast
 implement profile page for user 
 user can't move to profile page and createPodcast page if user is not logged in
 implement two apis for getUserByid and getPodcastsByAuthorId
 update middleware.ts to redirect user to home page if it is not logged in
 learn how to get user from clerk on server
+

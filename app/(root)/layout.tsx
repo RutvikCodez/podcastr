@@ -1,9 +1,8 @@
-"use client";
-import PodcastPlayer from "@/components/common/PodcastPlayer";
 import LeftSidebar from "@/components/utils/LeftSidebar";
 import MobileNav from "@/components/utils/MobileNav";
 import RightSidebar from "@/components/utils/RightSidebar";
 import Logo from "@/public/icons/logo.svg";
+import { Toaster } from "sonner";
 
 export default function Layout({
   children,
@@ -21,14 +20,14 @@ export default function Layout({
               <MobileNav />
             </div>
             <div className="flex flex-col">
-              {/* Toaster */}
+              <Toaster position="top-right" richColors />
               {children}
             </div>
           </div>
         </section>
         <RightSidebar />
       </main>
-      <PodcastPlayer />
+      {/* <PodcastPlayer /> */}
     </div>
   );
 }

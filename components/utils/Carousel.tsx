@@ -1,3 +1,4 @@
+"use client"
 import { carouselProps } from "@/utils/type";
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";

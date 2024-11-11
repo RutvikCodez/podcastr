@@ -9,11 +9,11 @@ import { TabDataType } from "@/utils/type";
 import ReuseableTabs from "../custom/tabs";
 import { getImageUrl } from "@/utils/getImageUrl";
 import { textToSpeech } from "@/utils/textToSpeech";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const CreatePodcastForm = () => {
   const podcastData = [...createPodcastData, ...createPodcastImageData];
-  const router = useRouter()
+  // const router = useRouter()
   const form = useForm({
     resolver: ArrayToZodResolver(podcastData),
   });
@@ -21,29 +21,32 @@ const CreatePodcastForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (values: any) => {
     try {
-      const imageUrl = await getImageUrl(values.aiImage, values.podcastTitle);
+      const imageUrl = await getImageUrl(values.customImage, values.podcastTitle);
       const audioUrl = await textToSpeech(values.prompt, values.voiceType);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/createPodcast`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            podcastTitle: values.podcastTitle,
-            podcastDescription: values.podcastDescription,
-            audioUrl: audioUrl,
-            imageUrl: imageUrl,
-            voiceType: values.voiceType,
-            voicePrompt: values.prompt,
-            imagePrompt: values.aiImage,
-          }),
-        }
-      );
-      const data = await response.json();
-      console.log("Podcast created successfully:", data);
-      router.push("/")
+      console.log(imageUrl, "imageUrl");
+      console.log(audioUrl, "audioUrl");
+      form.reset();
+      // const response = await fetch(
+      //   `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/createPodcast`,
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       podcastTitle: values.podcastTitle,
+      //       podcastDescription: values.podcastDescription,
+      //       audioUrl: audioUrl,
+      //       imageUrl: imageUrl,
+      //       voiceType: values.voiceType,
+      //       voicePrompt: values.prompt,
+      //       imagePrompt: values.aiImage,
+      //     }),
+      //   }
+      // );
+      // const data = await response.json();
+      // console.log("Podcast created successfully:", data);
+      // router.push("/")
     } catch (error) {
       console.log("Error submitting form:", error);
     }

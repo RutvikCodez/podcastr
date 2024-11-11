@@ -86,8 +86,10 @@ export const createPodcastData: magicField[] = [
       }),
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 placeholder:text-3 bg-black-1 rounded-accent-1 placeholder:text-gray-1 border-none text-gray-1 focus-visible:ring-orange-1"
-      }
+        input:
+          "text-3 placeholder:text-3 bg-black-1 rounded-accent-1 placeholder:text-gray-1 border-none text-gray-1 focus-visible:ring-orange-1",
+      },
+      defaultValue: "",
     },
   },
   {
@@ -98,6 +100,7 @@ export const createPodcastData: magicField[] = [
       label: "Voice Type",
       validation: z.string(),
       placeholder: "Select AI Voice",
+      defaultValue: "",
       options: () => {
         return [
           { value: "alloy", label: "alloy" },
@@ -110,8 +113,9 @@ export const createPodcastData: magicField[] = [
       },
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
-      }
+        input:
+          "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
+      },
     },
   },
   {
@@ -124,12 +128,14 @@ export const createPodcastData: magicField[] = [
       validation: z.string({
         required_error: "Podcast Description is required!",
       }),
+      defaultValue: "",
       cols: 5,
       rows: 5,
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
-      }
+        input:
+          "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
+      },
     },
   },
   {
@@ -143,10 +149,12 @@ export const createPodcastData: magicField[] = [
       validation: z.string({
         required_error: "AI Prompt is required!",
       }),
+      defaultValue: "",
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
-      }
+        input:
+          "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-orange-1",
+      },
     },
   },
 ];
@@ -159,12 +167,14 @@ export const createPodcastImageData: magicField[] = [
       name: "aiImage",
       type: "text",
       label: "AI Prompt to generate Thumbnail",
+      defaultValue: "",
       placeholder: "Provide text to generate thumbnail",
       validation: z.string().optional(),
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-offset-orange-1",
-      }
+        input:
+          "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-offset-orange-1",
+      },
     },
   },
   {
@@ -172,14 +182,16 @@ export const createPodcastImageData: magicField[] = [
     RenderComponent: CustomInput,
     config: {
       name: "customImage",
+      defaultValue: "",
       type: "file",
       label: "Upload Custom Image",
       placeholder: "Upload Custom Image",
       validation: z.string().optional(),
       cns: {
         label: "font-bold text-white-1 text-3 leading-normal",
-        input: "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-offset-orange-1",
-      }
+        input:
+          "text-3 text-gray-1 w-full border-none bg-black-1 focus-visible:ring-offset-orange-1",
+      },
     },
   },
-]
+];
